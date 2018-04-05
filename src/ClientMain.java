@@ -7,15 +7,12 @@ public class ClientMain {
       System.exit(1);
     }
 
-    try {
-      int portNumber = Integer.parseInt(args[0]);
-    } catch (NumberFormatException n) {
-      n.printStackTrace();
-    }
+    int portNumber = Integer.parseInt(args[1]);
 
-    String serverName = args[1];
+    String serverName = args[0];
 
+    Thread t = new testServer(portNumber);
+    t.start();
     GreetingClient client = new GreetingClient(portNumber, serverName);
-
   }
 }

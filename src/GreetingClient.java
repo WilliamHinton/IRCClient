@@ -3,10 +3,10 @@ import java.io.*;
 
 public class GreetingClient {
 
-    public static void greetingClient(int portNumber, String serverName) {
+    public GreetingClient(int portNumber, String serverName) {
         try {
-            System.out.println("Connecting to " + serverName + " on port " + port);
-            Socket client = new Socket(serverName, port);
+            System.out.println("Connecting to " + serverName + " on port " + portNumber);
+            Socket client = new Socket(serverName, portNumber);
 
             System.out.println("Just connected to " + client.getRemoteSocketAddress());
             OutputStream outToServer = client.getOutputStream();
